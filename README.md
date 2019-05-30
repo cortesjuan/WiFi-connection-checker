@@ -1,4 +1,4 @@
-#WConnChecker
+# WConnChecker
 
 WConnChecker is a tool for Self-Connection to the WiFi Network, based on the idea of YAWAC (Yet Another Wifi Auto Connect).
 
