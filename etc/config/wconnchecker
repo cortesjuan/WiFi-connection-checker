@@ -64,6 +64,6 @@ wWANName="wwan"
 
 # Don't connect to this MACs
 # no1_macaddr, no2_macaddr, no3_macaddr...
-no1_macaddr="84:16:F9:FC:E6:2D"
-no2_macaddr="AC:84:C6:C8:14:B7"
+no1_macaddr="00:00:00:00:00:00"
+no2_macaddr="00:00:00:00:00:00"
 
