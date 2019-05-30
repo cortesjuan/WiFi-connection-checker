@@ -178,6 +178,8 @@ net_change() {
         uci set wireless."$wIFACEName".disabled="0"
         uci set wireless."$wIFACEName".ssid="$wSSID"
         uci set wireless."$wIFACEName".device="$wIFACEDevice"
+        uci set wireless."$wIFACEName".encryption="$wEncryption"
+        uci set wireless."$wIFACEName".key="$wKey"
         uci set wireless."$wIFACEName".mode="sta"
         uci set wireless."$wIFACEName".network="$wIFACENetwork"
         uci set wireless."$wIFACEName".bssid="$newMAC"

@@ -1,6 +1,6 @@
 #!bin/sh
 
-# Tool for Self-Connection to the WiFi Network
+ # Tool for Self-Connection to the WiFi Network
 # https://github.com/cortesjuan/WiFi-connection-checker
 # Based on the idea of YAWAC (Yet Another Wifi Auto Connect)
 # https://github.com/mehdichaouch/YAWAC
@@ -61,6 +61,15 @@ wIFACEName="etecsa_radio0"
 wIFACENetwork="wan wwan"
 # WWAN name
 wWANName="wwan"
+# Wireless Security
+# ----------------- 
+# Encryption Cifer Auto(none, psk, psk2, psk-mixed)
+# Encryption Cifer Force CCMP (AES) (psk+ccmp, psk2+ccmp, psk-mixed+ccmp)
+# Encryption Cifer Force TKIP (psk+tkip, psk2+tkip, psk-mixed+tkip)
+# Encryption Cifer Force TKIP + CCMP (psk+tkip+ccmp, psk2+tkip+ccmp, psk-mixed+tkip+ccmp) 
+wEncryption="none"
+# Key
+wKey=""
 
 # Don't connect to this MACs
 # no1_macaddr, no2_macaddr, no3_macaddr...
