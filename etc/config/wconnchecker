@@ -1,6 +1,6 @@
 #!bin/sh
 
- # Tool for Self-Connection to the WiFi Network
+# Tool for Self-Connection to the WiFi Network
 # https://github.com/cortesjuan/WiFi-connection-checker
 # Based on the idea of YAWAC (Yet Another Wifi Auto Connect)
 # https://github.com/mehdichaouch/YAWAC
