@@ -1,0 +1,37 @@
+#!/bin/sh /etc/rc.common
+
+# WConnChecker
+# Tool for Self-Connection to the WiFi Network
+# https://github.com/cortesjuan/WiFi-connection-checker
+# Based on the idea of YAWAC (Yet Another Wifi Auto Connect)
+# https://github.com/mehdichaouch/YAWAC
+
+START=99
+APP=WConnChecker
+BIN=/usr/bin/wconnchecker.sh
+ARGS=--daemon
+PID=/var/run/wconnchecker.pid
+LOGGER="logger -t $APP -s"
+
+start() {
+        if [ ! -x $BIN ]; then
+                $LOGGER "No file $BIN, or not executable"
+                exit 1
+        fi
+
+        $LOGGER "Start $BIN"
+        start-stop-daemon -x $BIN -m -p $PID -b -S -- $ARGS
+        exit 0
+}
+
+stop() {
+        if [ ! -f "$PID" ]; then
+                $LOGGER "No pid file $PID"
+                exit 1
+        fi
+
+        $LOGGER "Stop $BIN \(PID: $(cat $PID)\)
+        service_kill ${BIN##*/} $PID
+        rm -f $PID
+        exit 0
+}

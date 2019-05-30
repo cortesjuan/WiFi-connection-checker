@@ -1,0 +1,69 @@
+#!bin/sh
+
+ # Tool for Self-Connection to the WiFi Network
+# https://github.com/cortesjuan/WiFi-connection-checker
+# Based on the idea of YAWAC (Yet Another Wifi Auto Connect)
+# https://github.com/mehdichaouch/YAWAC
+
+# This config file is use by wconnchecker.sh
+
+# Background internet connection checking interval
+ConnCheckTimer=60
+
+# After new network is set, time to wait for network to establish, before checking if it's working
+# If too low the router may be still waiting for the dhcp assignment from the main router, causing the script to discard the network
+NewConnCheckTimer=25
+
+# Set a random MAC each boot and new connection 
+rand_Mac="1"
+# Set a random Name each boot and new connection
+rand_Name="1"
+# Prefix for random Name
+rand_NamePREFIX="android-"
+
+# Limit for how many times to search for AP
+scan_LIMIT="5"
+# Delay in seconds between iw scans
+scan_DELAY="2"
+
+# TESTS
+# -----
+# Address to ping to test connectivity
+test_addr="google.com"
+# Use nslookup or ping
+test_useNslookup="1"
+# Check if DHCP Client got IP (0 or 1)
+test_DHCPIP="1"
+# Check rule values
+# 0: Return 1 if nslookup (or Ping) AND DHCP Client are Ok
+# 1: Return 1 if nslookup (or Ping) OR DHCP Client are Ok
+# 2: Return 1 if nslookup (or Ping) is Ok
+# 3: Return 1 if DHCP Client has assigned IP (Only works if test_DHCPIP="1")  
+test_Rule="0"
+
+# Number of fail tests before search for new connection 
+test_failLimit="15"
+
+# WiFi parameters
+# ---------------
+#
+# (wifi-iface in file wireless)
+#
+# SSID you are a member of
+wSSID="WIFI_ETECSA"
+# Which interface to do a iw scan on (wireless interface)
+wIFACE="wlan0"
+# Interface device
+wIFACEDevice="radio0"
+# Interface name
+wIFACEName="etecsa_radio0"
+# Interface network
+wIFACENetwork="wan wwan"
+# WWAN name
+wWANName="wwan"
+
+# Don't connect to this MACs
+# no1_macaddr, no2_macaddr, no3_macaddr...
+no1_macaddr="84:16:F9:FC:E6:2D"
+no2_macaddr="AC:84:C6:C8:14:B7"
+
